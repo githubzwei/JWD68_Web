@@ -47,9 +47,9 @@ public class ELServlet extends HttpServlet {
 		Student obj = new Student(2,"Mg Mg");
 		request.setAttribute("reqObj", obj);
 		
-		Map<Integer, String> map =new HashMap<Integer, String>();
-		map.put(1, "AA");
-		map.put(2, "BB");
+		Map<String, String> map =new HashMap<String, String>();
+		map.put("1", "AA");
+		map.put("2", "BB");
 		request.setAttribute("reqMap", map);
 		
 		request.getRequestDispatcher("eltest.jsp").forward(request, response);

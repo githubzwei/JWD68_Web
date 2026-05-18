@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,13 +16,23 @@ ${reqName}
 <h3>Array</h3>
 ${reqNumber[0]} , ${reqNumber[1]}
 
+<h3>foreach</h3>
+<c:forEach items="${reqNumber}" var="number">
+	<p>${number}</p>
+</c:forEach>
+
 <h3>List</h3>
 ${reqList[0].name}
+
+<h3>foreach - list</h3>
+<c:forEach items="${reqList}" var="obj">
+	<p>${obj.name}</p>
+</c:forEach>
 
 <h3>Object</h3>
 ${reqObj.name}
 
 <h3>Map</h3>
-${reqMap['"1"']}
+${reqMap["1"]}
 </body>
 </html>
