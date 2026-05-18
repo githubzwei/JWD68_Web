@@ -32,7 +32,7 @@ public class TestingServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+		System.out.println("code added by GitHubZwei");
 		String name = request.getParameter("username");
 
 		PrintWriter pw = response.getWriter();
