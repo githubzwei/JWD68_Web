@@ -31,8 +31,8 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		PrintWriter pw= response.getWriter();
+	
 	}
 
 	/**
@@ -44,18 +44,17 @@ public class LoginServlet extends HttpServlet {
 		PrintWriter pw = response.getWriter();
 		String name = request.getParameter("uname");
 		String password = request.getParameter("upass");
-		
-		if(password.equals("123")) {
-			pw.print("Successfully Login!\nWelcome : "+name);
-			
+
+		if (password.equals("123")) {
+			pw.print("Successfully Login!\nWelcome : " + name);
+
 			/*
 			 * Cookie ck = new Cookie("ck_name",name); response.addCookie(ck);
 			 */
-			
+
 			request.getSession().setAttribute("session", name);
-			
+
 		}
-		
 
 	}
 
